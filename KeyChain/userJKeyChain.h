@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Security/Security.h>
+
 
 @interface userJKeyChain : NSObject
+
+
+
++ (void)keyChainSave:(NSString *)service;
+
++ (NSString *)keyChainLoad;
+
++ (void)keyChainDelete;
 
 @end

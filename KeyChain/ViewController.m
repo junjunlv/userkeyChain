@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "userJKeyChain.h"
 
 @interface ViewController ()
 
@@ -16,9 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
+    [userJKeyChain keyChainSave:@"1234444657"];
+    
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    NSLog(@"%@",[userJKeyChain keyChainLoad]);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
